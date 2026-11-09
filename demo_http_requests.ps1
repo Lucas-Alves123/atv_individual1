@@ -10,3 +10,4 @@ Write-Host "Realizando 3 chamadas HTTP para http://127.0.0.1:3000/guias..." -For
     
     $res | ConvertTo-Json -Compress
 }
+

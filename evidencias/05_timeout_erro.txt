@@ -20,3 +20,4 @@ Invalid lambda response received: Lambda response must be valid json
 
 Observação:
 A função continha um sleep de 5 segundos (`time.sleep(5)`), ultrapassando o limite configurado de 3 segundos, ocasionando a interrupção forçada da execução do runtime e o retorno de erro 502.
+

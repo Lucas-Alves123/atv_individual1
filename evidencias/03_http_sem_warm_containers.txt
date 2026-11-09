@@ -16,3 +16,4 @@ curl -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/json" -d 
 
 Observação:
 A cada chamada sem warm-containers, um novo container é criado e destruído logo após a resposta. A variável global 'contador' sempre reinicia em 0 e atinge 1.
+

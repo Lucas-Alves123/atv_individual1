@@ -15,3 +15,4 @@ try {
     Write-Host "Status HTTP:" $_.Exception.Response.StatusCode.value__
     Write-Host "Mensagem:" $_.Exception.Message
 }
+

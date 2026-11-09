@@ -26,3 +26,4 @@ REPORT RequestId: 4267b731-b4c2-4cd6-b91f-a664c1b5eac3	Init Duration: 0.04 ms	Du
 
 Observação:
 Com o Timeout aumentado para 10 segundos, a função conseguiu dormir os 5 segundos sem ser interrompida, finalizando em 5079.29 ms e emitindo com sucesso a guia de transporte com status 201.
+

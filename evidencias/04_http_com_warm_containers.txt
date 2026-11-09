@@ -16,3 +16,4 @@ curl -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/json" -d 
 
 Observação:
 Com --warm-containers LAZY, o container foi preservado e mantido em memória (reaproveitado) para as requisições subsequentes. Dessa forma, a variável global 'contador' persistiu na memória daquele ambiente, incrementando de 1 até 3.
+
