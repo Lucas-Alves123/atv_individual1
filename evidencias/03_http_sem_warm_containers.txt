@@ -1,0 +1,18 @@
+=== EVIDÊNCIA: GATILHO HTTP SEM WARM-CONTAINERS ===
+Comando servidor:
+sam local start-api
+
+Comando requisição (executado 3 vezes consecutivas):
+curl -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/json" -d "{\"requisicaoId\":\"R-002\",\"hospital\":\"H-Caruaru\"}"
+
+--- Retorno Chamada 1 ---
+{"guia":"G-R-002","hospital":"H-Caruaru","bolsas":[],"invocacaoNesteAmbiente":1}
+
+--- Retorno Chamada 2 ---
+{"guia":"G-R-002","hospital":"H-Caruaru","bolsas":[],"invocacaoNesteAmbiente":1}
+
+--- Retorno Chamada 3 ---
+{"guia":"G-R-002","hospital":"H-Caruaru","bolsas":[],"invocacaoNesteAmbiente":1}
+
+Observação:
+A cada chamada sem warm-containers, um novo container é criado e destruído logo após a resposta. A variável global 'contador' sempre reinicia em 0 e atinge 1.

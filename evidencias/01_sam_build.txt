@@ -1,0 +1,16 @@
+=== EVIDÊNCIA: SAM BUILD ===
+Comando:
+sam build
+
+Saída:
+Starting Build use cache
+Building codeuri: hello_world runtime: python3.12 architecture: x86_64 functions: HelloWorldFunction
+ Running PythonPipBuilder:CleanUp
+ Running PythonPipBuilder:ResolveDependencies
+ Running PythonPipBuilder:CopySource
+ Running PythonPipBuilder:CopySource
+
+Build Succeeded
+
+Built Artifacts  : .aws-sam\build
+Built Template   : .aws-sam\build\template.yaml

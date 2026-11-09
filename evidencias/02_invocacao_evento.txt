@@ -1,0 +1,24 @@
+=== EVIDÊNCIA: INVOCACAO COM EVENTO ===
+Comando executado duas vezes:
+sam local invoke -e events/pedido.json
+
+--- 1ª Invocação (Cold Start) ---
+Invoking app.lambda_handler (python3.12)
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+Mounting .aws-sam\build\HelloWorldFunction as /var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: 9bdd9f1854ee1d4c78ae3517a416d16055eb3ddc1819bb2752b767d6bde74378
+START RequestId: d88c647b-4b14-4442-b223-bc08a2e9dfdd Version: $LATEST
+END RequestId: d88c647b-4b14-4442-b223-bc08a2e9dfdd
+REPORT RequestId: d88c647b-4b14-4442-b223-bc08a2e9dfdd	Init Duration: 0.06 ms	Duration: 83.24 ms	Billed Duration: 84 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+{"statusCode": 201, "body": "{\"guia\": \"G-R-001\", \"hospital\": \"H-Recife\", \"bolsas\": [\"O-NEG-0142\"], \"invocacaoNesteAmbiente\": 1}"}
+
+--- 2ª Invocação (Warm Start / Imagem já cacheada) ---
+Invoking app.lambda_handler (python3.12)
+Local image is up-to-date
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+Mounting .aws-sam\build\HelloWorldFunction as /var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: 61fc793f0742decb77631e740b76a78723f303868820b3f23119e713198e2382
+START RequestId: 5e9864ca-2efe-4ddc-a59f-e9a49bceedb3 Version: $LATEST
+END RequestId: 5e9864ca-2efe-4ddc-a59f-e9a49bceedb3
+REPORT RequestId: 5e9864ca-2efe-4ddc-a59f-e9a49bceedb3	Init Duration: 0.04 ms	Duration: 67.75 ms	Billed Duration: 68 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+{"statusCode": 201, "body": "{\"guia\": \"G-R-001\", \"hospital\": \"H-Recife\", \"bolsas\": [\"O-NEG-0142\"], \"invocacaoNesteAmbiente\": 1}"}

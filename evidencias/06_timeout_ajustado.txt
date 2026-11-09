@@ -1,0 +1,28 @@
+=== EVIDÊNCIA: LIMITE DE TEMPO - AJUSTADO PARA 10 SEGUNDOS ===
+Alteração no template.yaml:
+Globals -> Function -> Timeout: 10
+
+Recompilação:
+sam build
+
+Comando requisição:
+curl -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/json" -d "{\"requisicaoId\":\"R-003\",\"demorar\":true}"
+
+Resultado recebido pelo cliente:
+HTTP Status: 201 Created
+{
+  "guia": "G-R-003",
+  "hospital": null,
+  "bolsas": [],
+  "invocacaoNesteAmbiente": 1
+}
+
+Log do SAM CLI (servidor):
+Invoking app.lambda_handler (python3.12)
+START RequestId: 4267b731-b4c2-4cd6-b91f-a664c1b5eac3 Version: $LATEST
+END RequestId: 4267b731-b4c2-4cd6-b91f-a664c1b5eac3
+REPORT RequestId: 4267b731-b4c2-4cd6-b91f-a664c1b5eac3	Init Duration: 0.04 ms	Duration: 5079.29 ms	Billed Duration: 5080 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+"POST /guias HTTP/1.1" 201 -
+
+Observação:
+Com o Timeout aumentado para 10 segundos, a função conseguiu dormir os 5 segundos sem ser interrompida, finalizando em 5079.29 ms e emitindo com sucesso a guia de transporte com status 201.

@@ -1,0 +1,18 @@
+=== EVIDÊNCIA: GATILHO HTTP COM WARM-CONTAINERS LAZY ===
+Comando servidor:
+sam local start-api --warm-containers LAZY
+
+Comando requisição (executado 3 vezes consecutivas):
+curl -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/json" -d "{\"requisicaoId\":\"R-002\",\"hospital\":\"H-Caruaru\"}"
+
+--- Retorno Chamada 1 ---
+{"guia":"G-R-002","hospital":"H-Caruaru","bolsas":[],"invocacaoNesteAmbiente":1}
+
+--- Retorno Chamada 2 ---
+{"guia":"G-R-002","hospital":"H-Caruaru","bolsas":[],"invocacaoNesteAmbiente":2}
+
+--- Retorno Chamada 3 ---
+{"guia":"G-R-002","hospital":"H-Caruaru","bolsas":[],"invocacaoNesteAmbiente":3}
+
+Observação:
+Com --warm-containers LAZY, o container foi preservado e mantido em memória (reaproveitado) para as requisições subsequentes. Dessa forma, a variável global 'contador' persistiu na memória daquele ambiente, incrementando de 1 até 3.

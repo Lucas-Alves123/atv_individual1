@@ -1,0 +1,22 @@
+=== EVIDÊNCIA: LIMITE DE TEMPO - ESTOURO DE TIMEOUT ===
+Configuração do template:
+Globals -> Function -> Timeout: 3
+
+Comando requisição:
+curl -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/json" -d "{\"requisicaoId\":\"R-003\",\"demorar\":true}"
+
+Resultado recebido pelo cliente:
+HTTP Status: 502 Bad Gateway / Erro interno
+
+Log do SAM CLI (servidor):
+Invoking app.lambda_handler (python3.12)
+START RequestId: 8ea24c83-a626-45d8-b177-ffa2bd193c7f Version: $LATEST
+Function 'HelloWorldFunction' timed out after 3 seconds
+09 Nov 2026 19:07:15,854 [ERROR] (rapid) Invoke failed error=errResetReceived InvokeID=8ea24c83-a626-45d8-b177-ffa2bd193c7f
+END RequestId: 8ea24c83-a626-45d8-b177-ffa2bd193c7f
+REPORT RequestId: 8ea24c83-a626-45d8-b177-ffa2bd193c7f	Duration: 3000.00 ms	Billed Duration: 3000 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+Invalid lambda response received: Lambda response must be valid json
+"POST /guias HTTP/1.1" 502 -
+
+Observação:
+A função continha um sleep de 5 segundos (`time.sleep(5)`), ultrapassando o limite configurado de 3 segundos, ocasionando a interrupção forçada da execução do runtime e o retorno de erro 502.
