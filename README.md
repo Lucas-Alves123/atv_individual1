@@ -1,9 +1,3 @@
-# Atividade Individual 1: Serverless — Rota Vital
-
-**Estudante:** Lucas Mateus
-
----
-
 ## 1. Visão Geral e Objetivo
 
 Esta atividade prática tem como objetivo implementar, executar e analisar localmente uma função **serverless** (AWS Lambda simulado via AWS SAM CLI e Docker), disparada tanto por eventos quanto por requisições HTTP, representando o fluxo de emissão de **Guia de Transporte** do sistema **Rota Vital**.
