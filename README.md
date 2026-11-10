@@ -1,12 +1,6 @@
 # Atividade Individual 1: Serverless — Rota Vital
 
-**Instituição:** CESAR School  
-**Curso:** Análise e Desenvolvimento de Sistemas (ADS) — 2026.2  
-**Disciplina:** Infraestrutura de Software  
-**Estudante:** Lucas Mateus  
-**Contexto do Sistema:** Projeto Rota Vital (Logística de Transporte de Bolsas de Sangue)  
-**Repositório GitHub:** [https://github.com/Lucas-Alves123/atv_individual1](https://github.com/Lucas-Alves123/atv_individual1)  
-**Vídeo de Demonstração (até 3 minutos):** [Link do Vídeo no YouTube / Google Drive / Loom](#) *(Adicione o link do seu vídeo aqui)*
+**Estudante:** Lucas Mateus
 
 ---
 
