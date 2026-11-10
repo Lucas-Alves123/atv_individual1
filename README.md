@@ -293,28 +293,7 @@ Todas as evidências textuais geradas durante as execuções dos comandos estão
 
 ---
 
-## 7. Roteiro Sugerido para o Vídeo de Apresentação (Até 3 Minutos)
-
-Para a gravação de tela:
-1. **0:00 - 0:30 (Apresentação e Código):**  
-   - Apresente-se e mostre brevemente o VS Code com `template.yaml` (rota `/guias`) e `hello_world/app.py`.
-   - Mostre o Docker Desktop rodando.
-2. **0:30 - 1:15 (Invocação com Evento):**  
-   - Execute no terminal `.\demo_local_invoke.ps1`.
-   - Mostre na saída o `REPORT` do Lambda apontando a redução no tempo entre a 1ª e a 2ª chamada e o JSON da guia devolvido (`G-R-001`).
-3. **1:15 - 2:00 (Chamada HTTP e Warm Containers):**  
-   - No terminal 1, execute `.\iniciar_servidor.ps1`.
-   - No terminal 2, execute `.\demo_http_requests.ps1`.
-   - Destaque o campo `invocacaoNesteAmbiente` incrementando de 1 a 3.
-4. **2:00 - 2:45 (Erro de Timeout e Resolução):**  
-   - Execute `.\demo_timeout_test.ps1`.
-   - Explique o comportamento de timeout configurado no template e sua resolução aumentando o parâmetro `Timeout` para 10 segundos.
-5. **2:45 - 3:00 (Encerramento):**  
-   - Conclua reforçando que todas as respostas teóricas e evidências estão detalhadas neste repositório.
-
----
-
-## 8. Declaração de Uso de Inteligência Artificial (PO-CESAR-021)
+## 7. Declaração de Uso de Inteligência Artificial (PO-CESAR-021)
 
 Em conformidade com a política institucional PO-CESAR-021 do CESAR School, declara-se a utilização de ferramentas de Inteligência Artificial generativa no desenvolvimento desta atividade:
 
