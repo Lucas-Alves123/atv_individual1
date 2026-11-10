@@ -3,3 +3,4 @@ $sam = if (Get-Command sam -ErrorAction SilentlyContinue) { "sam" } elseif (Test
 
 Write-Host "Iniciando API local em http://127.0.0.1:3000..." -ForegroundColor Green
 & $sam local start-api --warm-containers LAZY
+
